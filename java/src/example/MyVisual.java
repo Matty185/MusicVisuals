@@ -6,8 +6,8 @@ public class MyVisual extends Visual {
     WaveForm wf;
     AudioBandsVisual abv;
 
-    // Variable to manage the current state of the application (menu or visualization)
     private int currentState;
+    private float lerpedAmplitude;
 
     public void settings() {
         size(1024, 500);
@@ -15,28 +15,27 @@ public class MyVisual extends Visual {
 
     public void setup() {
         startMinim();
-        // Initially, set the state to show the menu
-        currentState = 0; // 0 for menu, 1 for visualization
+        currentState = 0;
 
         loadAudio("Vegeta x Awaken Rare Hardstyle (AniLifts Remix).mp3");
+        getAudioPlayer().play();
 
         wf = new WaveForm(this);
         abv = new AudioBandsVisual(this);
+
+        lerpedAmplitude = 0;
     }
 
     public void keyPressed() {
-        if (currentState == 0) { // When in menu
+        if (currentState == 0) {
             switch (key) {
                 case '1':
-                    // Switch to visualization
                     currentState = 1;
                     break;
-                // Implement other cases if needed
             }
-        } else { // When in visualization or other states
+        } else {
             switch (key) {
                 case ' ':
-                    // Toggle play/pause
                     if (getAudioPlayer().isPlaying()) {
                         getAudioPlayer().pause();
                     } else {
@@ -44,32 +43,37 @@ public class MyVisual extends Visual {
                     }
                     break;
                 case '0':
-                    // Return to menu and stop music
                     currentState = 0;
-                    getAudioPlayer().pause(); // Use pause() or stop() depending on your need
-                    getAudioPlayer().cue(0); // Rewind to the start of the track
-                    break;
-                case 'r':
-                    // Add functionality for 'r' if needed
                     break;
             }
         }
     }
 
     public void draw() {
+        background(0);
+
         if (currentState == 0) {
-            // Display menu
-            background(50);
+            calculateAverageAmplitude();
+            float amplitude = getAmplitude();
+
+          
+            lerpedAmplitude = lerp(lerpedAmplitude, amplitude, 0.1f);
+
             textSize(32);
-            fill(255);
-            text("Menu:", 100, 100);
-            text("1. Start Visualization", 100, 150);
-            text("Press 'Space' to pause", 100, 200);
-            text("Press 'R' to restart", 100, 250);
-            // Add other menu options if necessary
+
+            
+            int colorValue = (int)map(lerpedAmplitude, 0, 1, 0, 255);
+            fill(colorValue, 255 - colorValue, colorValue); 
+
+           
+            float yBase = 150;
+            float jumpHeight = 150 * lerpedAmplitude;
+
+            text("Menu:", 100, yBase - jumpHeight - 50);
+            text("1. Start Visualization", 100, yBase - jumpHeight);
+            text("Press 'Space' to pause", 100, yBase - jumpHeight + 50);
+            text("Press 'R' to restart", 100, yBase - jumpHeight + 100);
         } else if (currentState == 1) {
-            // Visualization
-            background(0);
             try {
                 calculateFFT();
             } catch (VisualException e) {

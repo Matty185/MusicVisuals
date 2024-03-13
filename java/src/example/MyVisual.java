@@ -7,7 +7,10 @@ public class MyVisual extends Visual {
     AudioBandsVisual abv;
 
     private int currentState;
+    private String audioFileName = "Vegeta x Awaken Rare Hardstyle (AniLifts Remix).mp3";
     private float lerpedAmplitude;
+
+    
 
     public void settings() {
         size(1024, 500);
@@ -15,74 +18,55 @@ public class MyVisual extends Visual {
 
     public void setup() {
         startMinim();
-        currentState = 0;
-
-        loadAudio("Vegeta x Awaken Rare Hardstyle (AniLifts Remix).mp3");
+        loadAudio(audioFileName);
         getAudioPlayer().play();
-
+    
         wf = new WaveForm(this);
         abv = new AudioBandsVisual(this);
-
-        lerpedAmplitude = 0;
+    
+        currentState = 1; // Start with WaveForm visualization
     }
+    
 
     public void keyPressed() {
-        if (currentState == 0) {
-            switch (key) {
-                case '1':
-                    currentState = 1;
-                    break;
-            }
-        } else {
-            switch (key) {
-                case ' ':
-                    if (getAudioPlayer().isPlaying()) {
-                        getAudioPlayer().pause();
-                    } else {
-                        getAudioPlayer().play();
-                    }
-                    break;
-                case '0':
-                    currentState = 0;
-                    break;
+        if (key == CODED) {
+            if (keyCode == RIGHT) {
+                currentState = (currentState % 2) + 1; // Cycle forward through the visualizations
+            } else if (keyCode == LEFT) {
+                currentState = (currentState == 1) ? 2 : 1; // Cycle backward through the visualizations
             }
         }
     }
+    
 
     public void draw() {
         background(0);
-
-        if (currentState == 0) {
-            calculateAverageAmplitude();
-            float amplitude = getAmplitude();
-
-          
-            lerpedAmplitude = lerp(lerpedAmplitude, amplitude, 0.1f);
-
-            textSize(32);
-
-            
-            int colorValue = (int)map(lerpedAmplitude, 0, 1, 0, 255);
-            fill(colorValue, 255 - colorValue, colorValue); 
-
-           
-            float yBase = 150;
-            float jumpHeight = 150 * lerpedAmplitude;
-
-            text("Menu:", 100, yBase - jumpHeight - 50);
-            text("1. Start Visualization", 100, yBase - jumpHeight);
-            text("Press 'Space' to pause", 100, yBase - jumpHeight + 50);
-            text("Press 'R' to restart", 100, yBase - jumpHeight + 100);
-        } else if (currentState == 1) {
-            try {
-                calculateFFT();
-            } catch (VisualException e) {
-                e.printStackTrace();
-            }
-            calculateFrequencyBands();
-            calculateAverageAmplitude();
+    
+        // Process audio for visualization
+        calculateAverageAmplitude();
+        float amplitude = getAmplitude();
+        lerpedAmplitude = lerp(lerpedAmplitude, amplitude, 0.1f); // Smooth the amplitude changes
+    
+        // Display the selected visualization
+        if (currentState == 1) {
             wf.render();
+        } else if (currentState == 2) {
             abv.render();
         }
+    
+        // Dynamic text size based on amplitude
+        float textSize = map(lerpedAmplitude, 0, 1, 16, 32); // Adjust min and max text size as needed
+    
+        // Dynamic text color based on amplitude
+        int textColor = lerpColor(color(128), color(255, 0, 0), amplitude); // From white to red
+    
+        // Display the audio file's name and instructions with dynamic size and color
+        fill(textColor);
+        textSize(textSize);
+        textAlign(CENTER, CENTER);
+        text(audioFileName, width / 2, height - 30);
+        text("Use LEFT and RIGHT arrows to switch screens", width / 2, height - 50);
     }
+    
+    
 }

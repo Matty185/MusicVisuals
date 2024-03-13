@@ -1,53 +1,34 @@
 package example;
 
-import ie.tudublin.Visual;
+import processing.core.PApplet;
 
-public class CubeVisual1 extends Visual
-{
-    public void settings()
-    {
-        size(800, 600, P3D);
-        //fullScreen(P3D, SPAN);
+public class CubeVisual1 {
+    PApplet parent;
+    float angleX = 0;
+    float angleY = 0;
+
+    public CubeVisual1(PApplet p) {
+        parent = p;
     }
 
-    public void setup()
-    {
-        startMinim();
-        //startListening();
-        loadAudio("heroplanet.mp3");
-        colorMode(HSB);
+    public void render(float amplitude) {
+        parent.pushMatrix();
+        parent.translate(parent.width / 2, parent.height / 2, -200);
+        parent.rotateX(angleX);
+        parent.rotateY(angleY);
+
+        float hue = parent.map(amplitude * 25, 0, 1, 0, 255);
+        int color = parent.color(hue, 255, 255); 
+        parent.stroke(255);
+        parent.fill(color);
+
+        float boxSize = 200 + (200 * amplitude);
+        parent.box(boxSize);
+        parent.popMatrix();
     }
 
-    public void keyPressed()
-    {
-        if (key == ' ')
-        {
-            getAudioPlayer().cue(0);
-            getAudioPlayer().play();
-        }
+    public void updateRotation(float rate) {
+        angleY += (parent.mouseX - parent.pmouseX) * rate;
+        angleX += (parent.mouseY - parent.pmouseY) * rate;
     }
-
-    float angle = 0;
-
-    public void draw()
-    {
-        background(0);
-        calculateAverageAmplitude();
-        stroke(map(getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
-        strokeWeight(5);
-        noFill();
-        lights();
-        pushMatrix();
-        //
-        camera(0, 0, 0, 0, 0, -1, 0, 1, 0);
-        translate(0, 0, -200);
-        rotateX(angle);
-        rotateZ(angle);       
-        float boxSize = 50 + (200 * getSmoothedAmplitude()); 
-        box(boxSize);   
-        popMatrix();
-        angle += 0.01f;
-    }
-
-
 }

@@ -1,7 +1,10 @@
 package C21473436;
 
+import processing.core.PApplet;
+
 public class MattysVisual extends Visual {
     CubeVisual cube;
+    SmallCubes sc;
 
     private int currentState;
     private String audioFileName = "Vegeta x Awaken Rare Hardstyle (AniLifts Remix).mp3";
@@ -16,6 +19,7 @@ public class MattysVisual extends Visual {
         loadAudio(audioFileName);
         getAudioPlayer().play();
         cube = new CubeVisual(this);
+        sc = new SmallCubes(this);
 
         currentState = 1;
     }
@@ -41,13 +45,18 @@ public class MattysVisual extends Visual {
     
         if (currentState == 1) {
             cube.render(lerpedAmplitude);
+        } else if (currentState == 2) {
+            cube.render(lerpedAmplitude);
+            sc.render(lerpedAmplitude);
+            
         }
+        
 
         float textSize = map(lerpedAmplitude, 0, 1, 16, 32);
         int textColor = lerpColor(color(255), color(0, 0, 0), getAmplitude());
     
         fill(textColor);
-        textSize(textSize);
+        textSize(textSize + (textSize * lerpedAmplitude));
         textAlign(CENTER, CENTER);
         text(audioFileName, width / 2, height - 30);
         text("Use LEFT and RIGHT arrows to switch screens", width / 2, height - 50);

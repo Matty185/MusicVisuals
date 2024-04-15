@@ -16,6 +16,7 @@ Object Oriented Programming group assignment to create an audio visualiser progr
 
 # Instructions
 Clone this repository https://github.com/Matty185/MusicVisuals to access the program. You will find all of our files in java > src > C21473436. Start the program by running Main.java. 
+
 ![image](https://github.com/Matty185/MusicVisuals/assets/124153544/aa2bbfd2-500a-45b0-aec1-a2d442b5ab7d)
 
 As shown on program run, user can navigate through our different visuals by pressing left and right key. Enjoy!

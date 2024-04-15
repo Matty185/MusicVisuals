@@ -4,7 +4,7 @@ import processing.core.PApplet;
 
 public class SmallCubes {
     PApplet parent;
-    int numCubes = 300; 
+    int numCubes = 200; 
     float[][] rotations;
     float[][] positions;
     float[] depths;

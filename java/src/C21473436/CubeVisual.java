@@ -19,6 +19,7 @@ public class CubeVisual {
 
         float hue = parent.map(amplitude * 25, 0, 1, 0, 255);
         int color = parent.color(hue, 255, 255); 
+        
         parent.stroke(255);
         parent.fill(color);
 

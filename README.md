@@ -22,7 +22,8 @@ Clone this repository https://github.com/Matty185/MusicVisuals to access the pro
 As shown on program run, user can navigate through our different visuals by pressing left and right key. Enjoy!
 
 # How it works
-- Rotating cube
+
+## Rotating cube
   
 ![image](https://github.com/Matty185/MusicVisuals/assets/124153544/19773c18-4591-4eb4-874c-7bbfbfd46e74)
 
@@ -32,7 +33,17 @@ This visual involves the functionality needed to create an interactive 3D visual
 
 The cube is generated with the box() method in the render method, which is influenced by amplitute making the cube change size with music. The pushMatrix() and popMatrix() methods are used to save and restore the current transformation matrix. This allows rotation of the cube with a mouse drag without affecting any other objects drawn later. Using translate() the cube is centered on the screen. The visual is also equipped with colour changing based on amplitute achieved by mapping the hue based on amplitute with map().
 
-- Smaller cubes
+## Rotating Cube 2
+![[Screenshot 2024-04-19 at 12.29.28.png]]
+This cube will rotate automatically. 
+
+Star effects provide an illusion that the cube is moving through space. 
+![[Screenshot 2024-04-19 at 12.33.34.png]]
+
+A grid layout on two opposite face give enhances the cube's 3D effect.
+![[Screenshot 2024-04-19 at 12.34.30.png]]
+
+## Smaller cubes
   
 ![image](https://github.com/Matty185/MusicVisuals/assets/124153544/867a4dc4-0302-4257-8f78-8afb77ee83a9)
 
@@ -42,7 +53,14 @@ This is visually appealing, dynamic 3D visualization of cubes that float around 
 
 The constructor consists of multiple arrays to store all data needed for position, depth, rotation and colour of the cubes. Similrarly to the previous visual, it utilises the The pushMatrix() and popMatrix() methods, as well as rotate() to add life to the program.
 
+
 # What I am most proud of in the assignment
+This project provided us with a new perspective of programming that supersedes the usual industry type problems found in other modules and instead, opened our eyes to the niche sub-section of creative programming. 
+
+We particularly enjoyed using the Processing development environment that enabled us to create the interactive graphics and visuals seen in this project. 
+
+Finally, the use of Github not only provided us with an insight into how projects are developed in industry, but ensured teamwork and cooperation throughout. 
+
 
 # Markdown Tutorial
 
@@ -105,10 +123,10 @@ This is a youtube video:
 
 This is a table:
 
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
+| Heading 1  | Heading 2                      |
+| ---------- | ------------------------------ |
+| Some stuff | Some more stuff in this column |
+| Some stuff | Some more stuff in this column |
+| Some stuff | Some more stuff in this column |
+| Some stuff | Some more stuff in this column |
 

@@ -55,6 +55,12 @@ The constructor consists of multiple arrays to store all data needed for positio
 
 
 # What I am most proud of in the assignment
+This project provided us with a new perspective of programming that supersedes the usual industry type problems found in other modules and instead, opened our eyes to the niche sub-section of creative programming. 
+
+We particularly enjoyed using the Processing development environment that enabled us to create the interactive graphics and visuals seen in this project. 
+
+Finally, the use of Github not only provided us with an insight into how projects are developed in industry, but ensured teamwork and cooperation throughout. 
+
 
 # Markdown Tutorial
 
@@ -117,10 +123,10 @@ This is a youtube video:
 
 This is a table:
 
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
+| Heading 1  | Heading 2                      |
+| ---------- | ------------------------------ |
+| Some stuff | Some more stuff in this column |
+| Some stuff | Some more stuff in this column |
+| Some stuff | Some more stuff in this column |
+| Some stuff | Some more stuff in this column |
 

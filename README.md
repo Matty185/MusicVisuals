@@ -61,7 +61,6 @@ We particularly enjoyed using the Processing development environment that enable
 
 Finally, the use of Github not only provided us with an insight into how projects are developed in industry, but ensured teamwork and cooperation throughout. 
 
-
 # Markdown Tutorial
 
 This is *emphasis*

@@ -35,7 +35,6 @@ public abstract class Visual extends PApplet {
 		return log(f) / log(2.0f);
 	}
 
-<<<<<<< HEAD
 //protected void calculateFFT() throws VisualException
 //{
 //	fft.window(FFT.HAMMING);
@@ -48,16 +47,6 @@ public abstract class Visual extends PApplet {
 //		throw new VisualException("You must call startListening or loadAudio before calling fft");
 //	}
 //}
-=======
-	protected void calculateFFT() throws VisualException {
-		fft.window(FFT.HAMMING);
-		if (ab != null) {
-			fft.forward(ab);
-		} else {
-			throw new VisualException("You must call startListening or loadAudio before calling fft");
-		}
-	}
->>>>>>> 855c8d671f97c60725eb2e8dd1877422313cc9ea
 
 	public void calculateAverageAmplitude() {
 		float total = 0;

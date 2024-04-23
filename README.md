@@ -38,10 +38,12 @@ This cube will rotate automatically.
 <img width="1710" alt="Screenshot 2024-04-23 at 18 34 41" src="https://github.com/Matty185/MusicVisuals/assets/100539586/2a003452-16a1-43ef-8d17-02924d5e5ed8">
 
 Star effects provide an illusion that the cube is moving through space. 
-![[Screenshot 2024-04-19 at 12.33.34.png]]
+<img width="910" alt="Screenshot 2024-04-23 at 18 36 45" src="https://github.com/Matty185/MusicVisuals/assets/100539586/5472008d-d14e-4dc7-a981-8a38f9a6fcd6">
+
 
 A grid layout on two opposite face give enhances the cube's 3D effect.
-![[Screenshot 2024-04-19 at 12.34.30.png]]
+<img width="1160" alt="Screenshot 2024-04-23 at 18 37 27" src="https://github.com/Matty185/MusicVisuals/assets/100539586/625e8105-e22d-413d-a9ae-e8f19028fb32">
+
 
 ## Smaller cubes
   

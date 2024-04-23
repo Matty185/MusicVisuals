@@ -34,8 +34,8 @@ This visual involves the functionality needed to create an interactive 3D visual
 The cube is generated with the box() method in the render method, which is influenced by amplitute making the cube change size with music. The pushMatrix() and popMatrix() methods are used to save and restore the current transformation matrix. This allows rotation of the cube with a mouse drag without affecting any other objects drawn later. Using translate() the cube is centered on the screen. The visual is also equipped with colour changing based on amplitute achieved by mapping the hue based on amplitute with map().
 
 ## Rotating Cube 2
-![[Screenshot 2024-04-19 at 12.29.28.png]]
 This cube will rotate automatically. 
+<img width="1710" alt="Screenshot 2024-04-23 at 18 34 41" src="https://github.com/Matty185/MusicVisuals/assets/100539586/2a003452-16a1-43ef-8d17-02924d5e5ed8">
 
 Star effects provide an illusion that the cube is moving through space. 
 ![[Screenshot 2024-04-19 at 12.33.34.png]]

@@ -14,6 +14,9 @@ Clone this repository https://github.com/Matty185/MusicVisuals to access the pro
 
 As shown on program run, user can navigate through our different visuals by pressing left and right key. Enjoy!
 
+# Youtube video link
+https://www.youtube.com/watch?v=4yp-5dU_rTk&ab_channel=MateuszMatijuk
+
 # How it works
 
 ## Rotating cube

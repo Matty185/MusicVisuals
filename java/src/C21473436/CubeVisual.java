@@ -22,17 +22,18 @@ public class CubeVisual {
         parent.rotateX(angleX);
         parent.rotateY(angleY);
 
-        float hue = parent.map(amplitude * 200, 0, 1, 0, 255);
-        int color = parent.color(hue, 255, 255); 
+        float hue = parent.map(amplitude * 25, 0, 1, 0, 255); // Scale amplitude and map it to a hue value
+        int color = parent.color(hue, 255, 255);  // Generate a color from the hue
         
-        parent.stroke(255);
-        parent.fill(color);
+        parent.stroke(255); // Set outline to white
+        parent.fill(color); // Fill with colour
 
-        float boxSize = 200 + (200 * amplitude);
-        parent.box(boxSize);
-        parent.popMatrix();
+        float boxSize = 200 + (200 * amplitude); // Calculate the box size based on amplitude
+        parent.box(boxSize); // Generate box
+        parent.popMatrix(); // Restore previous transformation matrix
     }
 
+    // Update rotation angles based on mouse movement and rate
     public void updateRotation(float rate) {
         angleY += (parent.mouseX - parent.pmouseX) * rate;
         angleX += (parent.mouseY - parent.pmouseY) * rate;

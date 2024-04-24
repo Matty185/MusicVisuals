@@ -14,7 +14,7 @@ public class MattysVisual extends Visual {
 
     // Window size and rendering mode
     public void settings() {
-        size(1024, 500, P3D);
+        fullScreen(P3D); // Set the program to run in full screen using P3D renderer
     }
 
     public void setup() {

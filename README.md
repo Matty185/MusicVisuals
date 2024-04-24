@@ -4,13 +4,6 @@ Names: Mateusz Matijuk, Daniel Carson
 
 Student Number: C21473436, C21431136
 
-## Instructions
-- Fork this repository and use it a starter project for your assignment
-- Create a new package named your student number and put all your code in this package.
-- You should start by creating a subclass of ie.tudublin.Visual
-- There is an example visualiser called MyVisual in the example package
-- Check out the WaveForm and AudioBandsVisual for examples of how to call the Processing functions from other classes that are not subclasses of PApplet
-
 # Description of the assignment
 Object Oriented Programming group assignment to create an audio visualiser program using java processing libraries.
 
@@ -29,8 +22,7 @@ As shown on program run, user can navigate through our different visuals by pres
 
 This visual involves the functionality needed to create an interactive 3D visual representation of a cube whose size and color respond to a given amplitude, with user interaction through mouse movement affecting its rotation. 
 
-![image](https://github.com/Matty185/MusicVisuals/assets/124153544/57968076-c92b-4767-b6ca-779231c34d25)
-
+![image](https://github.com/Matty185/MusicVisuals/assets/124153544/3712ff45-d5d9-44af-bea1-1da373a01d13)
 
 The cube is generated with the box() method in the render method, which is influenced by amplitute making the cube change size with music. The pushMatrix() and popMatrix() methods are used to save and restore the current transformation matrix. This allows rotation of the cube with a mouse drag without affecting any other objects drawn later. Using translate() the cube is centered on the screen. The visual is also equipped with colour changing based on amplitute achieved by mapping the hue based on amplitute with map().
 
@@ -54,6 +46,8 @@ A grid layout on two opposite face give enhances the cube's 3D effect.
 This is visually appealing, dynamic 3D visualization of cubes that float around the center of the screen, rotate continuously, and change size based on amplitude value.
 
 ![image](https://github.com/Matty185/MusicVisuals/assets/124153544/47b8d5ca-e933-400b-9706-4483846d801a)
+
+![image](https://github.com/Matty185/MusicVisuals/assets/124153544/57968076-c92b-4767-b6ca-779231c34d25)
 
 The constructor consists of multiple arrays to store all data needed for position, depth, rotation and colour of the cubes. Similrarly to the previous visual, it utilises the The pushMatrix() and popMatrix() methods, as well as rotate() to add life to the program.
 

@@ -29,9 +29,11 @@ As shown on program run, user can navigate through our different visuals by pres
 
 This visual involves the functionality needed to create an interactive 3D visual representation of a cube whose size and color respond to a given amplitude, with user interaction through mouse movement affecting its rotation. 
 
-![image](https://github.com/Matty185/MusicVisuals/assets/124153544/c8197145-7b33-4b16-9dda-982a59cb60da)
+![image](https://github.com/Matty185/MusicVisuals/assets/124153544/57968076-c92b-4767-b6ca-779231c34d25)
+
 
 The cube is generated with the box() method in the render method, which is influenced by amplitute making the cube change size with music. The pushMatrix() and popMatrix() methods are used to save and restore the current transformation matrix. This allows rotation of the cube with a mouse drag without affecting any other objects drawn later. Using translate() the cube is centered on the screen. The visual is also equipped with colour changing based on amplitute achieved by mapping the hue based on amplitute with map().
+
 
 ## Rotating Cube 2
 This cube will rotate automatically. 
@@ -54,6 +56,10 @@ This is visually appealing, dynamic 3D visualization of cubes that float around 
 ![image](https://github.com/Matty185/MusicVisuals/assets/124153544/47b8d5ca-e933-400b-9706-4483846d801a)
 
 The constructor consists of multiple arrays to store all data needed for position, depth, rotation and colour of the cubes. Similrarly to the previous visual, it utilises the The pushMatrix() and popMatrix() methods, as well as rotate() to add life to the program.
+
+![image](https://github.com/Matty185/MusicVisuals/assets/124153544/9a8c583c-8507-4335-9022-0b9c54da59ce)
+
+The render method is very similar render method for the other cube. 
 
 
 # What I am most proud of in the assignment
